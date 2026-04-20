@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #121213;
+  color: #fff;
+  font-family: 'Clear Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px solid #3a3a3c;
+  padding: 16px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+/* Board */
+#board {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+}
+
+.tile {
+  width: 62px;
+  height: 62px;
+  border: 2px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.tile.correct  { background: #538d4e; border-color: #538d4e; }
+.tile.present  { background: #b59f3b; border-color: #b59f3b; }
+.tile.absent   { background: #3a3a3c; border-color: #3a3a3c; }
+
+/* Message */
+#message {
+  font-size: 1rem;
+  font-weight: 600;
+  min-height: 24px;
+  color: #fff;
+}
+
+/* Keyboard */
+#keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.key-row {
+  display: flex;
+  gap: 6px;
+}
+
+.key {
+  height: 58px;
+  min-width: 43px;
+  background: #818384;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.wide-key { min-width: 65px; font-size: 0.75rem; }
+
+.key.correct { background: #538d4e; }
+.key.present { background: #b59f3b; }
+.key.absent  { background: #3a3a3c; }
+
+#new-game-btn {
+  background: #538d4e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.05rem;
+}
+
+#new-game-btn:hover {
+  background: #6aaf5e;
+}
+/* Flip animation on submit */
+@keyframes flip {
+  0%   { transform: rotateX(0); }
+  50%  { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0); }
+}
+
+.tile.flip {
+  animation: flip 0.5s ease forwards;
+}
+
+/* Shake animation on invalid guess */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+.row.shake {
+  animation: shake 0.4s ease;
+}
+.stats {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.stat span {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
