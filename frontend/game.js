@@ -1,4 +1,4 @@
-const BACKEND = "http://127.0.0.1:5001";
+const BACKEND = "https://wordle-backend-c6go.onrender.com";
 
 let secretWord = "";
 let currentRow = 0;
