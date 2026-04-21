@@ -39,5 +39,16 @@ python app.py
 Open `frontend/index.html` with Live Server in VS Code.
 
 ---
-
 ## Project Structure
+wordle-app/
+├── backend/
+│   ├── app.py
+│   └── requirements.txt
+└── docs/
+├── index.html
+├── style.css
+└── game.js
+
+---
+
+Built by [Anagha Malladi](https://github.com/anaghamalladi)
